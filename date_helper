@@ -1,0 +1,25 @@
+<?php
+
+ function validationDate($date){
+
+        $res = true;
+
+        $allowedDate = [
+            'connected',
+            'connect',
+            'cancel',
+            'requester',
+            'accept',
+            'block',
+            'unblock',
+            'delete'
+        ];
+
+        if (!in_array($date, $allowedDate)){
+
+            $res = false;
+        }
+
+        return $res;
+
+}
