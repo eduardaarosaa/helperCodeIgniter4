@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Controllers\Date;
+
+class Date extends CI_Controller{
+
+public function dateVerify(){
+        
+        $data = $this->request->getJson();
+        
+        if(!validationDate($data->status)){
+                return $this->response->setStatusCode(401)->setJSON([
+                    'message' => 'Status de conexão inválido.',
+                    'status' => false
+                ]);
+            }
+  }
+
+}
